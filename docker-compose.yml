@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build: ./app
+    volumes:
+      - ./app:/app
+      - frontend-node-modules:/app/node_modules
+    ports:
+      - "${EXPOSE_PORT}:5173"
+
+volumes:
+  frontend-node-modules:
