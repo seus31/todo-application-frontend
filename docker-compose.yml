@@ -3,9 +3,18 @@ services:
     build: ./app
     volumes:
       - ./app:/app
-      - frontend-node-modules:/app/node_modules
+      - todo-application-frontend-node-modules:/app/node_modules
+    networks:
+      - todo-application-frontend-network
     ports:
       - "${EXPOSE_PORT}:5173"
 
+networks:
+  todo-application-frontend-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.35.1.0/24
+
 volumes:
-  frontend-node-modules:
+  todo-application-frontend-node-modules:
