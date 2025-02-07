@@ -4,7 +4,8 @@ import { Navigate } from 'react-router-dom'
 const RedirectIfAuthenticated: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const token = localStorage.getItem('token')
 
-    if (token) {
+    console.log('test' + token)
+    if (token !== null && token !== undefined && token !== '') {
         return <Navigate to="/" />
     }
 
