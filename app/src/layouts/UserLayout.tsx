@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import Sidebar from "../components/Sidebar.tsx";
-import Header from "../components/Header.tsx";
+import Header from '../components/Header.tsx'
+import Sidebar from '../components/Sidebar.tsx'
 
 const UserLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     return (
@@ -8,7 +8,7 @@ const UserLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             <div className="flex h-screen bg-gray-100">
                 <Sidebar />
 
-                <div className="flex flex-col flex-1 overflow-y-auto">
+                <div className="flex flex-col flex-1 overflow-hidden">
                     <Header />
                     {children}
                 </div>
