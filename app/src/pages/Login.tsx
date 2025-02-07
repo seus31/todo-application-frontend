@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TEInput, TERipple } from 'tw-elements-react'
 import { setAccessToken } from '../libs/auth.ts'
-import './Login.css'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -33,18 +32,14 @@ const Login = () => {
         <>
             <section className="h-screen">
                 <div className="h-full">
-                    {/* <!-- Left column container with background--> */}
-                    <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+                    <div className="g-6 flex h-full flex-wrap items-center justify-center">
 
-                        {/* <!-- Right column container --> */}
                         <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
                             <form>
-                                {/* <!--Sign in section--> */}
-                                <div className="flex flex-row items-center justify-center lg:justify-start">
+                                <div className="flex flex-row items-center justify-center">
                                     <p className="mb-4 mr-4 text-2xl">Login</p>
                                 </div>
 
-                                {/* <!-- User Name input --> */}
                                 <TEInput
                                     type="text"
                                     label="User Name"
@@ -54,7 +49,6 @@ const Login = () => {
                                     onChange={(e) => setUserName(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!--Password input--> */}
                                 <TEInput
                                     type="password"
                                     label="Password"
@@ -64,8 +58,7 @@ const Login = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!-- Login button --> */}
-                                <div className="text-center lg:text-left">
+                                <div className="text-center">
                                     <TERipple rippleColor="light">
                                         <button
                                             type="button"
@@ -76,7 +69,6 @@ const Login = () => {
                                         </button>
                                     </TERipple>
 
-                                    {/* <!-- Register link --> */}
                                     <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
                                         Don't have an account?{" "}
                                         <a

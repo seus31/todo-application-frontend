@@ -2,7 +2,6 @@ import axios from 'axios'
 import { useState } from 'react'
 import { TEInput, TERipple } from 'tw-elements-react'
 import { setAdminAccessToken } from '../../libs/auth.ts'
-import './AdminLogin.css'
 
 const AdminLogin = () => {
     const [email, setEmail] = useState('')
@@ -30,18 +29,13 @@ const AdminLogin = () => {
         <>
             <section className="h-screen">
                 <div className="h-full">
-                    {/* <!-- Left column container with background--> */}
-                    <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-
-                        {/* <!-- Right column container --> */}
+                    <div className="g-6 flex h-full flex-wrap items-center justify-center">
                         <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
                             <form>
-                                {/* <!--Sign in section--> */}
-                                <div className="flex flex-row items-center justify-center lg:justify-start">
+                                <div className="flex flex-row items-center justify-center">
                                     <p className="mb-4 mr-4 text-2xl">Login</p>
                                 </div>
 
-                                {/* <!-- Email input --> */}
                                 <TEInput
                                     type="email"
                                     label="Email address"
@@ -51,7 +45,6 @@ const AdminLogin = () => {
                                     onChange={(e) => setEmail(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!--Password input--> */}
                                 <TEInput
                                     type="password"
                                     label="Password"
@@ -61,8 +54,7 @@ const AdminLogin = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!-- Login button --> */}
-                                <div className="text-center lg:text-left">
+                                <div className="text-center">
                                     <TERipple rippleColor="light">
                                         <button
                                             type="button"

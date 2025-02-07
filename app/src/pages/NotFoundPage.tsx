@@ -1,5 +1,3 @@
-import './NotFoundPage.css'
-
 const NotFoundPage = () => {
     return (
         <>

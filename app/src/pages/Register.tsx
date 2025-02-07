@@ -2,7 +2,6 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TEInput, TERipple } from 'tw-elements-react'
-import './Login.css'
 
 const Register = () => {
     const navigate = useNavigate()
@@ -39,18 +38,14 @@ const Register = () => {
         <>
             <section className="h-screen">
                 <div className="h-full">
-                    {/* <!-- Left column container with background--> */}
-                    <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+                    <div className="g-6 flex h-full flex-wrap items-center justify-center">
 
-                        {/* <!-- Right column container --> */}
                         <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
                             <form>
-                                {/* <!--Sign in section--> */}
-                                <div className="flex flex-row items-center justify-center lg:justify-start">
+                                <div className="flex flex-row items-center justify-center">
                                     <p className="mb-4 mr-4 text-2xl">Create an account</p>
                                 </div>
 
-                                {/* <!-- User Name input --> */}
                                 <TEInput
                                     type="text"
                                     label="User Name"
@@ -60,7 +55,6 @@ const Register = () => {
                                     onChange={(e) => setUserName(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!-- Email input --> */}
                                 <TEInput
                                     type="email"
                                     label="Email address"
@@ -70,7 +64,6 @@ const Register = () => {
                                     onChange={(e) => setEmail(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!--Password input--> */}
                                 <TEInput
                                     type="password"
                                     label="Password"
@@ -80,7 +73,6 @@ const Register = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!--Password input--> */}
                                 <TEInput
                                     type="password"
                                     label="Confirm Password"
@@ -90,8 +82,7 @@ const Register = () => {
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                 ></TEInput>
 
-                                {/* <!-- Login button --> */}
-                                <div className="text-center lg:text-left">
+                                <div className="text-center">
                                     <TERipple rippleColor="light">
                                         <button
                                             type="button"
@@ -102,7 +93,6 @@ const Register = () => {
                                         </button>
                                     </TERipple>
 
-                                    {/* <!-- Register link --> */}
                                     <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
                                         Login with your account?{" "}
                                         <a
