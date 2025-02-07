@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard.tsx'
 import Login from './pages/Login.tsx'
 import NotFoundPage from './pages/NotFoundPage.tsx'
 import Register from './pages/Register.tsx'
-import './App.css'
+import Task from './pages/Task.tsx'
 
 const App = () => {
     return (
@@ -26,6 +26,11 @@ const App = () => {
                 <Route path="/" element={
                     <ProtectedRoute>
                         <Dashboard />
+                    </ProtectedRoute>
+                } />
+                <Route path="/tasks" element={
+                    <ProtectedRoute>
+                        <Task />
                     </ProtectedRoute>
                 } />
                 <Route path="*" element={<NotFoundPage />} />
