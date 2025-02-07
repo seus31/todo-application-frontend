@@ -1,10 +1,12 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { TEInput, TERipple } from 'tw-elements-react'
 import { setAccessToken } from '../libs/auth.ts'
 import './Login.css'
 
 const Login = () => {
+    const navigate = useNavigate()
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
 
@@ -17,13 +19,14 @@ const Login = () => {
                 'Content-Type': 'application/json'
             },
             data: param,
-        };
+        }
 
         axios(options)
             .then((response: { data: any }) => {
                 setAccessToken(response.data.token)
+                navigate('/')
             })
-            .catch((error: any) => console.error(error));
+            .catch((error: any) => console.error(error))
     }
 
     return (
@@ -41,7 +44,7 @@ const Login = () => {
                                     <p className="mb-4 mr-4 text-2xl">Login</p>
                                 </div>
 
-                                {/* <!-- Email input --> */}
+                                {/* <!-- User Name input --> */}
                                 <TEInput
                                     type="text"
                                     label="User Name"
@@ -72,6 +75,17 @@ const Login = () => {
                                             Login
                                         </button>
                                     </TERipple>
+
+                                    {/* <!-- Register link --> */}
+                                    <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+                                        Don't have an account?{" "}
+                                        <a
+                                            href="/register"
+                                            className="text-primary transition duration-150 ease-in-out hover:text-info-600 focus:text-info-600 active:text-info-700"
+                                        >
+                                            Register
+                                        </a>
+                                    </p>
                                 </div>
                             </form>
                         </div>
@@ -79,7 +93,7 @@ const Login = () => {
                 </div>
             </section>
         </>
-    );
+    )
 }
 
 export default Login
